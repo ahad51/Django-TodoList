@@ -25,4 +25,5 @@ def updateItem(request, pk):
         if updateForm.is_valid():
             updateForm.save()
             return redirect('alltodos')
+            
     return render(request, 'updateItem.html', {'todo': todo, 'updateForm': updateForm})
