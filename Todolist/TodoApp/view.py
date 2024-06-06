@@ -4,7 +4,7 @@ from .forms import TodoForm
 
 def alltodos(request):
     tasks = Mytodo.objects.all()
-    form = TodoForm()
+
     if request.method == 'POST':
         form = TodoForm(request.POST)
         if form.is_valid():
@@ -20,7 +20,7 @@ def deleteItem(request, pk):
 def updateItem(request, pk):
     todo = Mytodo.objects.get(id=pk)
     updateForm = TodoForm(instance=todo)
-    
+
     if request.method == 'POST':
         updateForm = TodoForm(request.POST, instance=todo)
         if updateForm.is_valid():
