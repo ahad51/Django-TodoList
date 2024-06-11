@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'TodoApp',
 ]
 
 MIDDLEWARE = [
@@ -50,26 +51,24 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Todolist.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'TodoApp/templetes')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages'
+                
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'Todolist.wsgi.application'
-
-
+WSGI_APPLICATION = 'Todolist.wsgi.applicati
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
