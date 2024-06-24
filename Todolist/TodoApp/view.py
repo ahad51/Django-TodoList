@@ -23,6 +23,7 @@ def updateItem(request, pk):
 
     if request.method == 'POST':
         updateForm = TodoForm(request.POST, instance=todo)
+        
         if updateForm.is_valid():
             updateForm.save()
             return redirect('alltodos')      
