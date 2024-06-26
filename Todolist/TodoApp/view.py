@@ -20,6 +20,7 @@ def deleteItem(request, pk):
 def updateItem(request, pk):
     todo = Mytodo.objects.get(id=pk)
     updateForm = TodoForm(instance=todo)
+    
 
     if request.method == 'POST':
         updateForm = TodoForm(request.POST, instance=todo)
