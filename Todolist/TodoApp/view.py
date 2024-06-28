@@ -18,6 +18,7 @@ def deleteItem(request, pk):
     return redirect('alltodos')
 
 def updateItem(request, pk):
+    
     todo = Mytodo.objects.get(id=pk)
     updateForm = TodoForm(instance=todo)
     if request.method == 'POST':
