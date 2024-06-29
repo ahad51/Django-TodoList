@@ -13,6 +13,7 @@ def alltodos(request):
     return render(request, 'alltodo.html', {'tasks': tasks, 'form': form})
 
 def deleteItem(request, pk):
+    
     task = Mytodo.objects.get(id=pk)
     task.delete()
     return redirect('alltodos')
