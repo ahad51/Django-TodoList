@@ -13,6 +13,7 @@ def alltodos(request):
     return render(request, 'alltodo.html', {'tasks': tasks, 'form': form})
 
 def deleteItem(request, pk):
+    
     task = Mytodo.objects.get(id=pk)
     task.delete()
     return redirect('alltodos')
@@ -20,8 +21,6 @@ def deleteItem(request, pk):
 def updateItem(request, pk):
     todo = Mytodo.objects.get(id=pk)
     updateForm = TodoForm(instance=todo)
-    
-
     if request.method == 'POST':
         updateForm = TodoForm(request.POST, instance=todo)
         if updateForm.is_valid():
